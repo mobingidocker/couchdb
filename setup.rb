@@ -61,7 +61,7 @@ secdoc = {
 		"roles" => []
 	},
 	"members" => {
-		"names" => [],
+		"names" => [ ENV['COUCHBASE_USERNAME'] ],
 		"roles" => []
 	}
 }
@@ -82,7 +82,7 @@ instanceList.each do |instance|
 	if ip != selfIP
 
 		replicate = {
-			"source" => "http://#{ip}:5984/#{dbname}",
+			"source" => "http://#{username}:#{password}@#{ip}:5984/#{dbname}",
 			"target" => "#{dbname}",
 			"create_target" => true,
 			"continuous" => true

@@ -89,6 +89,6 @@ instanceList.each do |instance|
 		}
 
 		puts "Replicate with #{ip}"
-		puts post("http://#{username}:#{password}@localhost:5984/_replicate", replicate)
+		puts post("http://#{username}:#{password}@localhost:5984/_replicator", replicate)
 	end
 end
